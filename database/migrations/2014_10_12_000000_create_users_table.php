@@ -17,6 +17,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('paypal_amount')->default(0);
+            $table->boolean('isAdmin')->default(false);
+            $table->boolean('isMod')->default(false);
+            $table->boolean('isVerified')->default(false);
+            $table->boolean('isBanned')->default(false);
+            $table->string('ban_reason')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

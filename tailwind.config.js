@@ -13,10 +13,12 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
             },
         },
     },
 
     plugins: [forms],
+
+    darkMode: 'class',
 };
