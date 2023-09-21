@@ -48,7 +48,7 @@ defineProps({
             <h1 v-if="$page.props.auth.user" class="font-extrabold text-5xl text-purple-600">Welcome <span class="typewrite"
                     data-period="2000" :data-type="userName"></span></h1>
             <h1 v-else class="font-extrabold text-5xl text-purple-600">Welcome <span class="typewrite" data-period="2000"
-                    data-type='[ "Guest!", "To AstreaCraft!" ]'></span></h1>
+                    data-type='[ "Guest!", "To Devniverse!" ]'></span></h1>
         </div>
 
         <Footer />
@@ -73,7 +73,7 @@ export default {
     computed: {
         // Create a computed property that formats 'data-type' as a string
         userName() {
-            return '[' + '"' + this.$page.props.auth.user.name + '!"' + ', "To AstreaCraft!"]';
+            return '[' + '"' + this.$page.props.auth.user.name + '!"' + ', "To Devniverse!"]';
         },
     },
 };

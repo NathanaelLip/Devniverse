@@ -23,7 +23,7 @@
 					<div class="text-sm text-gray-600 dark:text-gray-400 py-1">
 						&copy;
 						<span id="year">2023</span>
-						<a href="" class="hover:underline hover:text-gray-900"> AstreaCraft</a>.
+						<a href="" class="hover:underline hover:text-gray-900"> Devniverse</a>.
 						<a href="https://github.com/NathanaelLip" class="hover:underline hover:text-gray-900">Created with <span class="text-red-600">&#9829;</span> by Nathanael</a>.
 					</div>
 				</div>
