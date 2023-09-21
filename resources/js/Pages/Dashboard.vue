@@ -27,7 +27,7 @@ import { Head } from '@inertiajs/vue3';
                                 </svg>
                             </div>
                             <div class="flex flex-col flex-grow ml-4">
-                                <div class="text-sm text-gray-500 dark:text-gray-400">Next Payout Date</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">Next Payout</div>
                                 <div class="font-bold text-lg dark:text-gray-300">{{ admin.paydate }}</div>
                             </div>
                         </div>
