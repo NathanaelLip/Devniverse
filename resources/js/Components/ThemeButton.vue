@@ -1,6 +1,6 @@
 <template>
 	<label class="switch">
-		<input type="checkbox" checked @click="changeTheme();" id="input">
+		<input type="checkbox" @click="changeTheme();" checked="false" id="changeTheme">
 		<span class="slider round"></span>
 	</label>
 </template>
@@ -81,18 +81,31 @@ input:checked+.slider:before {
 
 <script>
 export default {
-    methods: {
-        changeTheme() {
-            const html = document.documentElement;
-
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        },
-    },
+	mounted() {
+		// Check localStorage on document load and update isChecked
+		const savedTheme = localStorage.getItem("theme");
+		const html = document.documentElement;
+		if (savedTheme === "dark") {
+			document.getElementById("changeTheme").checked = true;
+			html.classList.add("dark");
+		} else {
+			document.getElementById("changeTheme").checked = false;
+			html.classList.remove("dark");
+		}
+	},
+	methods: {
+		changeTheme() {
+			const html = document.documentElement;
+			if (html.classList.contains("dark")) {
+				html.classList.remove("dark");
+				document.getElementById("changeTheme").checked = false;
+				localStorage.setItem("theme", "light");
+			} else {
+				html.classList.add("dark");
+				localStorage.setItem("theme", "dark");
+				document.getElementById("changeTheme").checked = true;
+			}
+		},
+	},
 };
 </script>

@@ -23,15 +23,18 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/marketplace', function () {
-    return Inertia::render('Marketplace');
-});
+    return Inertia::render('Marketplace', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
+})->name('marketplace');
 
 Route::get('/site-rules', function () {
     return Inertia::render('SiteRules');
@@ -43,6 +46,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/admin/allusers',[\App\Http\Controllers\UserController::class, 'index'])->name('allusers');
+Route::get('/admin/allusers', [\App\Http\Controllers\UserController::class, 'index'])->name('allusers');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
