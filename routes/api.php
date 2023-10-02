@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AdminController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserIndexController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/admin', [AdminController::class, 'index']);
+
+Route::get('/users', [UserIndexController::class, 'index']);
+Route::put('/users/{id}', [UserController::class, 'update']);
+
+Route::get('/search', [UserIndexController::class, 'search']);

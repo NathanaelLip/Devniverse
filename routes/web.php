@@ -37,7 +37,10 @@ Route::get('/marketplace', function () {
 })->name('marketplace');
 
 Route::get('/site-rules', function () {
-    return Inertia::render('SiteRules');
+    return Inertia::render('SiteRules', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
 });
 
 Route::middleware('auth')->group(function () {
@@ -45,7 +48,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::get('/admin/allusers', [\App\Http\Controllers\UserController::class, 'index'])->name('allusers');
 
 require __DIR__ . '/auth.php';

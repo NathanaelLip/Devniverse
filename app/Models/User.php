@@ -21,6 +21,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'paypal_amount',
+        'isVerified',
+        'isAdmin',
+        'isMod',
+        'isBanned',
+        'ban_reason',
     ];
 
     /**

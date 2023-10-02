@@ -1,6 +1,7 @@
 <template>
 	<footer class="font-sans relative pt-5 pb-3 md:pb-6 w-full">
 		<div class="container mx-auto px-4">
+			<hr class="my-3 md:my-6 border-gray-400 w-5/12 self-center mx-auto" />
 			<div class="flex flex-wrap">
 				<div class="flex w-full md:w-full px-4 justify-center">
 					<div class="flex flex-wrap">
