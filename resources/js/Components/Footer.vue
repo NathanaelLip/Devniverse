@@ -44,7 +44,7 @@
 						<a href="" class="hover:underline hover:text-gray-900 dark:hover:text-gray-200 transition-all">
 							Devniverse</a>.
 						<a href="https://github.com/NathanaelLip"
-							class="hover:underline hover:text-gray-900 dark:hover:text-gray-200 transition-all">Created with
+							class="hover:underline hover:text-gray-900 dark:hover:text-gray-200 transition-all">Designed with
 							<span class="text-red-600">&#9829;</span> by Nathanael</a>.
 					</div>
 				</div>
